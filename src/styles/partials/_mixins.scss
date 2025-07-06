@@ -1,0 +1,6 @@
+// em um arquivo como _mixins.scss
+@mixin centralizar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
