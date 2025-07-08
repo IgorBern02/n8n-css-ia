@@ -4,8 +4,8 @@ import { useState } from "react";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
-  const [codeResult, setCodeResult] = useState("Mostrar codigo gerado...");
-  const [animResult, setAnimResult] = useState("Mostrar Animação");
+  const [codeResult, setCodeResult] = useState("💻Código CSS");
+  const [animResult, setAnimResult] = useState("🎨Resultado");
   const [isLoading, setIsLoading] = useState(false);
   const webhook = "https://igorbern.app.n8n.cloud/webhook/animacao-css";
 

@@ -6,7 +6,6 @@ import { FaCheck } from "react-icons/fa";
 type CardIAProps = {
   text?: string;
   children?: ReactNode;
-
   showCopyButton?: boolean;
 };
 
