@@ -1,5 +1,6 @@
-@import "../partials/variaveis";
+@use "../partials/variaveis" as *;
 
 body {
   background-color: $bg;
+  padding-bottom: 40px;
 }

@@ -1,15 +1,15 @@
 // Reset primeiro
-@import "./base/body";
-@import "./base/reset";
+@use "./base/body";
+@use "./base/reset";
 
 // Variáveis e configurações
-@import "./partials/variaveis";
-@import "./partials/cores";
-@import "./partials/tipografia";
-@import "./partials/mixins";
+@use "./partials/variaveis" as *;
+@use "./partials/cores" as *;
+@use "./partials/tipografia" as *;
+@use "./partials/mixins" as *;
 
 // Componentes
-@import "./components/botoes";
+@use "./components/botoes";
 
 .header {
   width: 100%;
@@ -19,24 +19,38 @@
     width: 100%;
     padding: 15px;
     text-align: center;
+    color: $text;
   }
 }
 
-.sections {
-  width: 100%;
-  height: 40%;
-  padding: 10px;
-  text-align: center;
+.main {
   @include centralizar;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
+  width: 100%;
+  margin-top: 15%;
 
-  .section {
-    width: 90%;
-    height: 300px;
-    background-color: $primary;
-    border-radius: 10px;
-    text-align: center;
+  .section_join {
     @include centralizar;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+
+    .input {
+      width: 85%;
+      height: auto;
+      padding: 15px 10px;
+      font-size: 17px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+    }
+  }
+
+  .section_result {
+    width: 100%;
+    @include centralizar;
+    flex-direction: column;
+    gap: 20px;
   }
 }

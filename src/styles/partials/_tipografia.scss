@@ -1,3 +1,5 @@
+@use "./variaveis" as *;
+
 body {
   font-family: $fonte-principal;
   color: $text;

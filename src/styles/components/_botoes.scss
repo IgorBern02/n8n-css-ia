@@ -1,2 +1,12 @@
+@use "../partials/variaveis" as *;
 
-
+.botao {
+  width: 85%;
+  border: none;
+  height: auto;
+  background-color: $primary;
+  padding: 15px;
+  color: $text;
+  border-radius: 10px;
+  font-size: 17px;
+}
