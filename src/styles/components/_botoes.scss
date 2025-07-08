@@ -1,7 +1,7 @@
 @use "../partials/variaveis" as *;
 
 .botao {
-  width: 85%;
+  width: 90%;
   border: none;
   height: auto;
   background-color: $primary;
@@ -9,4 +9,31 @@
   color: $text;
   border-radius: 10px;
   font-size: 17px;
+}
+
+@media (min-width: 768px) {
+  .main {
+    .section_join {
+      .botao {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    .section_join {
+      .botao {
+        width: auto;
+        padding: 15px 32px;
+        font-size: 19px;
+        background-color: #500073;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }

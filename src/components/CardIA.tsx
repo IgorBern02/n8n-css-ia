@@ -6,14 +6,14 @@ import { FaCheck } from "react-icons/fa";
 type CardIAProps = {
   text?: string;
   children?: ReactNode;
-  isDark?: boolean;
+
   showCopyButton?: boolean;
 };
 
 export const CardIA = ({
   text,
   children,
-  isDark,
+
   showCopyButton,
 }: CardIAProps) => {
   const [isCheck, setIsCheck] = useState(false);
@@ -27,7 +27,7 @@ export const CardIA = ({
   };
 
   return (
-    <section className={`card-ia ${isDark ? "card-ia--dark" : ""}`}>
+    <section className={"card-ia"}>
       {showCopyButton && (
         <button onClick={handleCopy} className="copy-button">
           {isCheck ? <FaCheck /> : <FaClipboard />}

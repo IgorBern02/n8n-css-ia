@@ -64,7 +64,7 @@ function App() {
           </button>
         </section>
         <section className="section_result">
-          <CardIA text={codeResult} isDark showCopyButton />
+          <CardIA text={codeResult} showCopyButton />
           <CardIA>
             {isLoading ? (
               <p>Carregando animação...</p>
