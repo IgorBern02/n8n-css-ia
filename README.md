@@ -1,69 +1,82 @@
-# React + TypeScript + Vite
+# 🎨 n8n-css-ia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto web que utiliza Inteligência Artificial e o serviço n8n para **gerar animações CSS automaticamente**, com uma interface simples, responsiva e moderna.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Sobre o Projeto
 
-## Expanding the ESLint configuration
+Esta aplicação permite ao usuário descrever uma animação em linguagem natural (ex: "criar uma animação de botão pulsante") e receber como resposta:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ✅ O código CSS da animação
+- ✅ Um preview da animação
+- ✅ Um botão para copiar o código gerado
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+O projeto é conectado a um **webhook do n8n**, que processa a solicitação usando uma IA (como OpenAI ou outra integrada via n8n) e retorna os dados prontos para o front-end.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠 Tecnologias Utilizadas
+
+- ⚛️ **React** — Biblioteca para construção da interface
+- 🎨 **Sass (SCSS)** — Estilização customizada com variáveis e mixins
+- 🌐 **n8n** — Plataforma de automação responsável por gerar as animações com IA
+- 📦 **Vite** — Empacotador rápido para desenvolvimento moderno
+- 💡 **React Icons** — Para ícones de copiar/copiado
+
+---
+
+## ⚙️ Como Rodar Localmente
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/IgorBern02/n8n-css-ia.git
+````
+2. Instale as dependências:
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+3. Inicie o projeto:
+```bash
+npm run dev
 ```
+
+4.Acesse no navegador:
+```bash
+[npm install](http://localhost:5173)
+```
+
+
+Webhook (n8n)
+O projeto está conectado ao webhook:
+
+```bash
+https://igorbern.app.n8n.cloud/webhook/animacao-css
+```
+
+Esse endpoint espera uma requisição POST com o seguinte formato:
+
+```bash
+{
+  "pergunta": "Descreva aqui a animação desejada"
+}
+
+```
+O retorno é um JSON com:
+
+-resposta.code: código CSS da animação
+-resposta.preview: HTML da animação
+-resposta.style: estilos adicionais (injetados dinamicamente)
+
+✨ Funcionalidades
+-Campo de input com suporte ao botão Enter
+-Botão de "Gerar animação"
+-Feedback de carregamento com loading...
+-Card escuro para o código e claro para o preview
+-Botão de copiar com ícone animado
+-Estilo responsivo com breakpoints Sass
+
+👨‍💻 Autor
+Desenvolvido por Igor Bernardes 💻
+
